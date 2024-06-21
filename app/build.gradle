@@ -6,6 +6,7 @@
  * This project uses @Incubating APIs which are subject to change.
  */
 
+
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
@@ -53,21 +54,22 @@ application {
 }
 
 
-def tag = (findProperty('tags') == null ? 'not @exclude' : findProperty('tags')+ ' and not @exclude')
+def tags = (findProperty('tags') == null) ? 'not @exclude' : findProperty('tags') + ' and not @exclude'
 
 task cucumber(){
     description("Running Cucumber tests")
     dependsOn assemble, compileTestJava
     doLast{
         javaexec {
-            main = "io/.cucumber.core.cli.Main"
-            classpath = configurations.cucumberRunime + sourceSets.main.output + sourceSets.test.output
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
             args = [
                 '-plugin', 'html:reports/test-report.html',
                 '--plugin', 'pretty',
                 '--glue', 'com.dimas',
                 '--tags',"${tags}",
-                'src/test/resources'            ]    
+                'src/test/resources'
+            ]    
         }
     }
 }
