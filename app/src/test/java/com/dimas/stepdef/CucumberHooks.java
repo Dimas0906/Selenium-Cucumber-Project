@@ -12,7 +12,8 @@ public class CucumberHooks extends BaseTest {
   }
 
   @After
-  public void afterTest() {
+  public void afterTest() throws InterruptedException {
+//    Thread.sleep(2000);
     driver.quit();
   }
 }

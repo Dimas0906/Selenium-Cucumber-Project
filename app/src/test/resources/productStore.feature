@@ -1,7 +1,7 @@
 @Product-Store
 Feature: Product Store
 
-  @valid-scenario
+  @test
   Scenario: User try to add one product to chart
     Given User try to login to the page
     And User input valid username and key in "standard_user"

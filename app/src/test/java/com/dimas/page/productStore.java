@@ -17,23 +17,7 @@ public class productStore {
 
   // Product Store Steps
   public void selectTheProductListProduct(String nameProduct) {
-    List<WebElement> elements = driver.findElements(By.xpath("//div[@class=\"inventory_item_name\"]"));
-    int length = elements.size();
-
-    if (length != 0) {
-      for (WebElement element : elements) {
-        if (element.getText().equals(nameProduct)) {
-          boolean compare = element.getText().contains(nameProduct);
-          System.out.println("Product Found: " + compare);
-          if (compare == true) {
-            WebElement parent = element.findElement(By.xpath("//div[@class=\"inventory_item\"]"));
-            WebElement button = parent.findElement(By.xpath("//button"));
-            button.click();
-          }
-        }
-      }
-    }
-
+    driver.findElement(By.xpath("//*[text()='"+nameProduct+"']/parent::*/parent::*/following-sibling::*/child::button")).click();
   }
 
   public void checkChartItems(String items) {

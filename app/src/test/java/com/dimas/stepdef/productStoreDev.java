@@ -13,9 +13,13 @@ public class productStoreDev extends BaseTest {
   productStore productStore;
   loginPage loginPage;
 
+  public productStoreDev(){
+    loginPage = new loginPage(driver);
+    productStore = new productStore(driver);
+  }
+
   @Given("User try to login to the page")
   public void userIsOnLoginPage() {
-    loginPage = new loginPage(driver);
     loginPage.goToLoginPage();
   }
 
