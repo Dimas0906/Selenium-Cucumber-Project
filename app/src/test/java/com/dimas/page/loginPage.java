@@ -31,4 +31,8 @@ public class loginPage {
   public void getErrorMessage(String errMsg) {
     assertTrue(driver.getPageSource().contains(errMsg));
   }
+
+  public void isUserOnProductPage() {
+    assert driver.getCurrentUrl().equals("https://www.saucedemo.com/inventory.html");
+  }
 }

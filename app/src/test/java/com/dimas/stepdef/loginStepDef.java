@@ -34,7 +34,7 @@ public class loginStepDef extends BaseTest {
 
   @Then("User should be redirected to the home page")
   public void userShouldBeRedirectedToHomePage() {
-    assert driver.getCurrentUrl().equals("https://www.saucedemo.com/inventory.html");
+    loginPage.isUserOnProductPage();
   }
 
   @Then("User able to see error message {string}")
