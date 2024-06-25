@@ -58,4 +58,7 @@ public class productPage {
     }
   }
 
+  public void clickCarticon() {
+    driver.findElement(By.className("shopping_cart_link")).click();
+  }
 }

@@ -1,5 +1,5 @@
 @Product-Store
-Feature: Product Store
+Feature: Product List
 
   @valid-scenario
   Scenario: User try to add one product to chart

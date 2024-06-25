@@ -54,4 +54,9 @@ public class productStepDef extends BaseTest {
   public void checkChartNotification(String totalProductAdded) {
     productPage.checkChart(totalProductAdded);
   }
+
+  @When("User click on cart icon")
+  public void userClickCartIcon() {
+    productPage.clickCarticon();
+  }
 }

@@ -32,7 +32,7 @@ public class loginStepDef extends BaseTest {
     loginPage.clickLoginButton();
   }
 
-  @Then("User should be redirected to the home page")
+  @Then("User should be redirected to the product page")
   public void userShouldBeRedirectedToHomePage() {
     loginPage.isUserOnProductPage();
   }

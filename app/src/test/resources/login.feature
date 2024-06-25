@@ -7,7 +7,7 @@ Feature: Login
     And User input username and key in "standard_user"
     And User input password and key in "secret_sauce"
     When User click on the login button
-    Then User should be redirected to the home page
+    Then User should be redirected to the product page
 
   @invalid-scenario
   Scenario: Login without fill in password
